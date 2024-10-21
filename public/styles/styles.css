@@ -1,0 +1,125 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+header {
+  background-color: #151515;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.brand-name {
+  color: #FFB26B;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+main {
+  padding: 1em;
+  text-align: center;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px; /* Added margin for space after the button */
+}
+
+ button:hover {
+  background-color: #0056b3;
+}
+
+ a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+ a:hover {
+  color: #0056b3;
+}
+
+/* Adjustments for labels and input fields */
+form label {
+  display: block; /* Change display to inline-block */
+  margin-bottom: 5px;
+  
+ /* Align labels with the top of the input fields */
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: calc(100% - 20px); /* Adjust width to accommodate label width */
+  padding: 12px; /* Increase padding for larger input fields */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Increase border radius for a softer look */
+  font-size: 16px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Additional style for error messages */
+.errorlist {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  text-align: left;
+}
+
+.errorlist li {
+  margin-bottom: 5px; /* Adjust spacing between error messages */
+}
+
+.error {
+  color: red; /* Set error text color to red */
+  font-size: 10px;
+}
