@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Models\Bet;
+use App\Models\CronTable;
 use App\Models\Game;
 use App\Models\GameResult;
 use App\Models\TimeSlot;
@@ -13,7 +14,8 @@ class GameResultModel
     public function run()
     {
         try {
-            $games = Game::all();
+            $games = Game::where('is_available', 1)->get();
+            $allGamesUpdated = [];
             foreach ($games as $game) {
                 $timeslots = TimeSlot::select('slot')->where('game_id', $game->id)->get()->toArray();
                 $allSlots = [];
@@ -29,7 +31,7 @@ class GameResultModel
                 $end_time = strtotime($timeSlot[1]);
                 $time_left = round(($end_time - $current_time) / 60, 1);
                 echo $time_left;
-                if ($time_left <= 3) {
+                if ($time_left <= 2) {
                     $slot = TimeSlot::where('game_id', $game->id)->where('slot', $timeSlot[0])->first();
                     $slot->expired_for_the_day = 1;
                     $slot->save();
@@ -52,11 +54,30 @@ class GameResultModel
                     $game_result->game_date = $current_date;
                     $game_result->slot_id = $slot->id;
                     $game_result->save();
+
+                    $allGamesUpdated[] = $game->game_name;
                 }
             }
-            return true;
+            $cronTable = new CronTable();
+            if (!empty($allGamesUpdated)) {
+                $cronTable->msg = "Results updated for " . implode(",", $allGamesUpdated);
+            } else {
+                $cronTable->msg = "No results updated";
+            }
+            if ($cronTable->save()) {
+                return true;
+            }
+            return false;
         } catch (Exception $e) {
             print_r($e->getMessage());
+            $cronTable = new CronTable();
+            if (!empty($e->getMessage())) {
+                $cronTable->msg = "Exception: " . $e->getMessage();
+            }
+            if ($cronTable->save()) {
+                return true;
+            }
+            return false;
         }
     }
     public function convertToTimeIntervals($slots)

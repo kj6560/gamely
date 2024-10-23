@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-body" style="background-color: black;">
-        <h3 class="card-title" style="color: 000;">Transactions</h3>
+        <h3 class="card-title"  style="color: #fff;">Transactions</h3>
         <div class="table-responsive">
             <table class="table table-primary">
                 <thead>

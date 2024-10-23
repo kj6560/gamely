@@ -29,6 +29,18 @@
                 <a href="/accountLedger"><i class="fa-solid fa-wallet"></i>
                     <span class="navbar-text">Balance: {{$user['wallet']??0}}</span></a>
             </div>
+            @if(Auth::check())
+            <div class="wallet-container">
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="navbar-text">Logout({{$user['name']}})</span></a>
+            </div>
+            @else
+            <div class="wallet-container">
+                <a href="/login"><i class="fa-solid fa-right-to-bracket"></i>
+                    <span class="navbar-text">Login</span></a>
+            </div>
+            @endif
+            
         </nav>
     </div>
 

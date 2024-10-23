@@ -38,6 +38,7 @@ class ComposerStaticInit57969a735f3229466c94293f2c7b3a0a
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
+        'ef157334f1067da991ff8953983afdb3' => __DIR__ . '/../..' . '/app/Helpers/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -578,8 +579,23 @@ class ComposerStaticInit57969a735f3229466c94293f2c7b3a0a
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\CalculateResults' => __DIR__ . '/../..' . '/app/Console/Commands/CalculateResults.php',
+        'App\\Console\\Commands\\GameResultCalculator' => __DIR__ . '/../..' . '/app/Console/Commands/GameResultCalculator.php',
+        'App\\Console\\GameResultModel' => __DIR__ . '/../..' . '/app/Console/GameResultModel.php',
+        'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
+        'App\\Http\\Controllers\\Admin\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GameController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Site\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/AuthController.php',
+        'App\\Http\\Controllers\\Site\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/GameController.php',
+        'App\\Http\\Controllers\\Site\\SiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SiteController.php',
+        'App\\Models\\Bet' => __DIR__ . '/../..' . '/app/Models/Bet.php',
+        'App\\Models\\CronTable' => __DIR__ . '/../..' . '/app/Models/CronTable.php',
+        'App\\Models\\Game' => __DIR__ . '/../..' . '/app/Models/Game.php',
+        'App\\Models\\GameResult' => __DIR__ . '/../..' . '/app/Models/GameResult.php',
+        'App\\Models\\TimeSlot' => __DIR__ . '/../..' . '/app/Models/TimeSlot.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\UserOtp' => __DIR__ . '/../..' . '/app/Models/UserOtp.php',
+        'App\\Models\\WalletTransaction' => __DIR__ . '/../..' . '/app/Models/WalletTransaction.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',

@@ -18,7 +18,7 @@ class SiteController extends Controller
     public function index(Request $request)
     {
         $usr = Auth::user();
-        $allGames = Game::all();
+        $allGames = Game::where('is_available',1)->get();
         return view('site.index', ['user' => $usr, 'games' => $allGames]);
     }
     public function game(Request $request, $id)

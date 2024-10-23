@@ -6,8 +6,23 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\CalculateResults' => $baseDir . '/app/Console/Commands/CalculateResults.php',
+    'App\\Console\\Commands\\GameResultCalculator' => $baseDir . '/app/Console/Commands/GameResultCalculator.php',
+    'App\\Console\\GameResultModel' => $baseDir . '/app/Console/GameResultModel.php',
+    'App\\Http\\Controllers\\Admin\\AdminController' => $baseDir . '/app/Http/Controllers/Admin/AdminController.php',
+    'App\\Http\\Controllers\\Admin\\GameController' => $baseDir . '/app/Http/Controllers/Admin/GameController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\Site\\AuthController' => $baseDir . '/app/Http/Controllers/Site/AuthController.php',
+    'App\\Http\\Controllers\\Site\\GameController' => $baseDir . '/app/Http/Controllers/Site/GameController.php',
+    'App\\Http\\Controllers\\Site\\SiteController' => $baseDir . '/app/Http/Controllers/Site/SiteController.php',
+    'App\\Models\\Bet' => $baseDir . '/app/Models/Bet.php',
+    'App\\Models\\CronTable' => $baseDir . '/app/Models/CronTable.php',
+    'App\\Models\\Game' => $baseDir . '/app/Models/Game.php',
+    'App\\Models\\GameResult' => $baseDir . '/app/Models/GameResult.php',
+    'App\\Models\\TimeSlot' => $baseDir . '/app/Models/TimeSlot.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\UserOtp' => $baseDir . '/app/Models/UserOtp.php',
+    'App\\Models\\WalletTransaction' => $baseDir . '/app/Models/WalletTransaction.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',
