@@ -38,7 +38,7 @@
                         <th scope="col">Game Date</th>
                         <th scope="col">Winning User</th>
                     </tr>
-                </thead>
+                </thead> 
                 <tbody>
                     @foreach ($results as $result)
                     <tr class="">
